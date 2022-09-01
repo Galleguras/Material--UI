@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Searcher from "./components/Searcher";
-import UserCard from "./components/userCard";
+import UserCard from "./containers/userCard";
 import { getGitHubUser } from "./services/users";
 const App = () => {
   const [inputUser, setInputUser] = useState("octocat");
