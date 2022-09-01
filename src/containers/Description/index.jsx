@@ -1,5 +1,7 @@
+import { Stack, Typography } from "@mui/material";
 import React from "react";
-import { IconButton, Stack, TextField, Typography } from "@mui/material";
+import LocationInformation from "../../components/LocationInformation";
+import PaperInformation from "../../components/PaperInformation";
 const Description = (props) => {
   const { userState } = props;
   const { bio } = userState;
@@ -9,11 +11,11 @@ const Description = (props) => {
         {bio ? (
           <Typography> {bio} </Typography>
         ) : (
-          <Typography> xxxxxxxxx </Typography>
+          <Typography> Sin datos </Typography>
         )}
       </Stack>
-      {/*   <PaperInformation/>
-      <LocationInformation/> */}
+      <PaperInformation userState={userState} />
+      <LocationInformation userState={userState} />
     </>
   );
 };
