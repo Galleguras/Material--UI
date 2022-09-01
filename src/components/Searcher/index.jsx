@@ -1,7 +1,20 @@
-import React from "react";
-import { Stack, TextField, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-const Searcher = () => {
+import { IconButton, Stack, TextField } from "@mui/material";
+import React, { useState } from "react";
+
+const Searcher = (prop) => {
+  const { inputUser, setInputUser } = prop;
+  const [valueInput, setValueInput] = useState("");
+
+  const onSearchValueChange = (event) => {
+    const inputValue = event.target.value;
+    setValueInput(inputValue);
+  };
+  // console.log("valueInput", valueInput);
+  const handleSubmit = () => {
+    setInputUser(valueInput);
+  };
+
   return (
     <Stack direction="row" sx={{ marginTop: "30px", width: "80%" }}>
       <TextField
@@ -11,8 +24,10 @@ const Searcher = () => {
         placeholder="Octocat"
         sx={{ width: "90%" }}
         size="small"
+        value={valueInput}
+        onChange={onSearchValueChange}
       />
-      <IconButton size="small" sx={{ left: "-45px" }}>
+      <IconButton onClick={handleSubmit} size="small" sx={{ left: "-45px" }}>
         <SearchIcon />
       </IconButton>
     </Stack>
