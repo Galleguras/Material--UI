@@ -8,7 +8,7 @@ const App = () => {
         background: "whitesmoke",
         width: "80vw",
         height: "500px",
-        borderRadious: "13px",
+        borderRadious: "15px",
         marginTop: "40px",
         display: "flex",
         flexDirection: "column",
