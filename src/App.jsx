@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Searcher from "./components/Searcher";
+import UserCard from "./components/userCard";
 import { getGitHubUser } from "./services/users";
 const App = () => {
   const [inputUser, setInputUser] = useState("octocat");
@@ -21,7 +22,7 @@ const App = () => {
       setUserState(userResponse);
     }
   };
-  console.log("userState", userState);
+  // console.log("userState", userState);
   useEffect(() => {
     gettinUser(inputUser);
   }, [inputUser]);
@@ -40,6 +41,7 @@ const App = () => {
       }}
     >
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+      <UserCard userState={userState} />
     </Container>
   );
 };
